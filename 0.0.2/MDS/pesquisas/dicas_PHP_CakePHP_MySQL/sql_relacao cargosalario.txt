@@ -1,0 +1,19 @@
+$sqlConsulta = "
+					SELECT  Setor.id, Setor.setor, Professions.cargo,
+					Professions.salario_base, Jornada.referencia AS jornada
+					FROM
+					gp_professions_sectors AS profSectors
+					
+					INNER JOIN gp_professions as Professions
+					ON profSectors.profession_id = Professions.id
+					
+					INNER JOIN gp_sectors AS Setor
+					ON profSectors.sector_id = Setor.id
+					
+					INNER JOIN gp_workdays AS Jornada
+					ON Professions.workday_id = Jornada.id
+					
+					WHERE 
+					profSectors.isdeleted = 'N'
+					AND
+					Professions.isdeleted = 'N'

@@ -1,0 +1,6 @@
+Menu de colunistas
+POSTS ->NomeCaderno
+
+Menu de administradores
+MODERAR-> NomeDoCaderno
+

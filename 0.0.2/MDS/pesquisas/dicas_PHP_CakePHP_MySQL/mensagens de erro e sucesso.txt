@@ -1,0 +1,41 @@
+SUCESSO ADD
+$this->Session->setFlash(__($this->Mensagens->sucessoAdd), 'default', array('class' => 'success'));
+
+FRACASSO ADD
+$this->Session->setFlash(__($this->Mensagens->falhaAdd), 'default', array());
+
+FALHA REGISTRO INVÁLIDO
+throw new NotFoundException(__($this->Mensagens->registroInvalido));
+
+SUCESSO ATUALIZAÇÃO
+$this->Session->setFlash(__($this->Mensagens->sucessoEdit), 'default', array('class' => 'success'));
+
+FRACASSO ATUALIZAÇÃO
+$this->Session->setFlash(__($this->Mensagens->falhaEdit), 'default', array());
+
+SUCESSO DELETE
+$this->Session->setFlash(__($this->Mensagens->sucessoDelet), 'default', array('class' => 'success'));
+
+FRACASSO DELETE
+$this->Session->setFlash(__($this->Mensagens->falhaDelet), 'default', array());
+
+criar coluna tabela
+ALTER TABLE `gp_terminationrais`
+ADD COLUMN `aviso_previo` INT(1) NULL DEFAULT 0 COMMENT '0->Não possui aviso prévio, 1-> Aviso prévio trabalhado, 2-> Aviso prévio indenizado'  AFTER `iniciativa`;
+
+`venc_habilitacao` DATE NULL ,
+
+ALTER TABLE `individuals`
+ADD COLUMN  `rg_data_espedicao` DATE NULL  AFTER `orgao_expedidor`;
+
+ echo $this->Form->submit('Gerar PDF', array('onclick' => 'this.form.target="_blank";return true;'));
+ echo $this->Form->end();
+
+
+`ctps_estado` CHAR(1) NOT NULL DEFAULT 'MG' ,
+
+`aviso_previo_trabalhado` CHAR(1) NULL DEFAULT 'N' ,
+
+`escolaridade` INT(1) NULL COMMENT '1->Ensino fundamental, 2-> Ensino médio, 3->Ensino superior' ,
+
+`escolaridade_status` CHAR(1) NOT NULL DEFAULT 'C' COMMENT 'C->Completo, I->Incompleto' ,

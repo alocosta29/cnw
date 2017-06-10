@@ -1,0 +1,28 @@
+Módulo de Monetização
+
+A. Moderação de anúncios/por caderno
+ -> Aprovar anúncios
+ -> Reprovar anúncios
+ -> Listar anúncios aprovados
+ -> Listar anúncios reprovados pelo moderador
+ -> Listar anúncios pendentes para aprovação
+ -> Cadastrar anunciante
+ -> Bloquear anunciante
+ 
+B. Publicação de anúncios
+ -> Criar anúncio 
+ -> Editar anúncio
+ -> Listar anúncios
+ -> Deletar anúncios 
+
+C. Exibição de anúncios
+ -> Listagem de livros
+ -> Listagem de cursos
+ -> 
+
+
+
+A mediocridade eh amiga da relativação...
+ 
+
+

@@ -1,0 +1,57 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+
+
+/* botão estilo verde (input tradicional cakephp) - tambem pode ser usado como link*/
+#mc-embedded-subscribe-form input[type=submit],
+#mc-embedded-subscribe-form ul li a,
+#mc-embedded-subscribe-form a {
+	width: auto;
+	/*background: #5BA150;*/
+	color: #FFFFFF;
+	border-color: #2d6324;
+	padding: 4px 10px;
+	margin-left:12px;
+	text-decoration: none;
+	border: 4px solid #55656b;
+	color: #FFFFFF;
+	font-size: 12px;
+        -moz-border-radius:10em;
+-webkit-border-radius:10em;
+ border-radius:10em;
+}
+#mc-embedded-subscribe-form ul li a:hover,
+#mc-embedded-subscribe-form a:hover {
+width: auto;
+background: #5BA150;
+color: #FFFFFF;
+text-decoration: none;
+}
+#mc-embedded-subscribe-form input[type=submit]:active,
+#mc-embedded-subscribe-form ul li a:active,
+#mc-embedded-subscribe-form a:active {
+					width: auto;
+					background: #5BA150;
+					color: #FFFFFF;
+					text-decoration: none;
+					}
+                                        
+
+#mc-embedded-subscribe-form input[type=email]{
+padding: 3px;
+
+
+
+}
+
+
+
+
+
+
+
+

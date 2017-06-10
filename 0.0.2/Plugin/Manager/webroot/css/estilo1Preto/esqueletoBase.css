@@ -1,0 +1,205 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ESTRUTURA BASE FLEXÍVEL HORIZONTALMENTE E VERTICALMENTE
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+html{border:2px magenta solid;}
+body{border:2px blue solid;}
+#content{border:2px yellow solid;}
+/**
+* Debugar:
+*
+* html{border:2px magenta solid;}
+* body{border:2px blue solid;}
+* #content{border:2px yellow solid;}
+* #nonfooter{border:2px red solid;}
+* #guidefooter{border:2px brown solid;}	
+*
+*/
+
+/* 
+1º passo: Mostrar o espaço ocupado por estas tags. Mostra que no Chrome elas ocupam toda a área útil do browser enquanto nos demais não.
+*/		
+		
+*
+{
+	margin:0;
+	padding:0;
+}
+
+
+#header
+{
+	/*
+	5º passo: Incluir o topo e o conteúdo observando seus posicionamentos naturais.
+	
+	background-color:#003d4c;
+	height:100px;
+	*/
+	
+	
+	background:#82888b url(../img/menu/bg.gif) center right;
+	height:41px;
+	
+	/*
+	6º passo: 
+	- Curiosamente margin e padding não funcionam para o bottom;
+	- Curiosamente quando eu coloco a borda em content, o espaço entre o header e o content desaparece.
+	
+	Obs.: 
+	- As margens (margin) são sempre transparentes e cada elemento HTML tem uma margem default determinada pelo browser, isto é embora as especificações CSS preconizem uma margem default 0 (zero) para todos os elementos HTML, cada fabricante de browser adota um valor default para a margem.
+	- Mas por que isso desaparece quando usamos uma borda no content?
+	*/
+	
+	/*border:1px #003d4c solid;  Curiosamente retira os espaços existentes ente este e os elementos pai d3dbe3*/
+
+	
+	text-align:left;
+}
+
+
+
+html
+{
+	/*
+	11º passo: Curiosamente o firefox precisa para manter o rodape embaixo quando o conteúdo for inferio a altura da área útil do browser.
+    */
+	height:100%;
+	
+	
+	/*
+	14º passo: Gambiarra para centralizar o body
+	*/
+	text-align:center;
+	display:inline-block;
+	
+	min-width:100%;
+}
+
+
+body
+{
+	/*
+	8º passo: Posicionar relativamente o html para que o rodapé se posicione em relação a ele e não a área útil no browser.
+	
+	Obs.: 
+	- Diminiuir o conteúdo para mostrar que o rodapé não permanece fixo nos navegadores em que o HTML e/ou BODY não expandem a altura e a largura como no chrome (firefox e o opera).
+	- Testar com HTML, depois com o body e depois com os dois.
+	- NÃO É A SOLUÇÃO!!!!
+	*/
+	position:relative;
+	
+	
+	/*
+	9º passo: Para resolver o problema apresentado na observação do 8º passo precisamos expandir a altura do HTML e/ou BODY.
+	Obs.: NÃO É A SOLUÇÃO!!!
+	*/
+	/* height:100% */
+	
+	/*
+	10º passo: O que fazer para manter a altura sempre em 100%?
+	
+	Obs.:
+	- É preciso comentar o height porque com ele o min-height não reproduz o efeito esperado (curioso).
+	- Colocar borda em content e transparent no background do rodapé para visualizar a função do padding no content...
+	*/
+	min-height:100%;
+	
+	margin:0;  /* Elimina o espaço entre ele e a tag HTML */
+	
+	
+	/*
+	12º passo: Permite que a largura respeite uma tabela interna, ou seja, quando não for mais possível expremer o conteúdo, cria-se uma barra de rolagem horizontal...
+	*/
+	display:inline-block;
+	
+	min-width:100%;
+}
+
+
+
+
+
+#content 
+{ 
+	/*
+	5º passo: Incluir o topo e o conteúdo observando seus posicionamentos naturais.
+	*/
+	 /*background-color:#fafcec; */
+	
+	
+	/*
+	6º passo: 
+	- Curiosamente margin e padding não funcionam para o top;
+	- Curiosamente quando eu coloco a borda em content, o espaço entre o header e o content desaparece.
+				
+	Obs.: 
+	- As margens (margin) são sempre transparentes e cada elemento HTML tem uma margem default determinada pelo browser, isto é embora as especificações CSS preconizem uma margem default 0 (zero) para todos os elementos HTML, cada fabricante de browser adota um valor default para a margem.
+	- Mas por que isso desaparece quando usamos uma borda no content?
+	*/
+	
+	/*border:1px white solid;  Esse item auxilia no chrome (10º passo) ao impedir que a última linha fique atrás do rodapé */
+	
+	padding-top:5px;
+	padding-bottom:30px;
+	
+	
+	padding-left:1.5em;
+	padding-right:1.5em;
+	
+	
+	/*
+	13º passo: Estabelecendo uma largura máxima e mínima (elástico)
+	*/
+	max-width:96em;
+	min-width:30em;
+
+	
+	/*
+	15º passo: Gambiarra para consertar efeito colateral do gambiarra no 14º passo.
+	*/
+	text-align:left;
+
+}
+
+/*
+7º passo: Aumentar o conteúdo para além dos limites do rodapé (esticar verticalmente a página) e ver o que acotece: o texto vai além do rodapé que permanece fixo na posição original, ou seja, não acompanha o texto ou o "esticamento da página".
+*/
+
+
+#footer
+{
+	/*
+	2º passo: Mostrar o posicionamento natural do footer.
+	*/
+	background-color:#878fa2;
+	height:27px;
+
+	
+	/*
+	3º passo: O que acontece com o footer naturalmente posicionado absolutamente (desaparece por não ter conteúdo ou largura definida)
+	*/
+	position: absolute;
+	bottom: 0;
+	
+	padding-bottom:3px;
+	padding-top:3px;
+	
+	/*
+	4º passo: Resolvendo o problema do 3º passo.
+	Observação:
+	Se um elemento posicionado de forma absoluta não está contido em qualquer elemento posicionado, ou seja, quando nenhum de seus elementos-ancestrais não forem posicionados, ele será posicionado em relação aos limites da página ou área útil do browser (chamada de bloco de conteúdo inicial).
+	*/
+	width: 100%;
+	
+	text-align:right;
+}
+
+
+		#footer img
+		{
+			margin-right:1.5%;
+		}
+
+
+

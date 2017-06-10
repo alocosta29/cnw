@@ -1,0 +1,204 @@
+@import url("menu.css");
+@import url("menuActionTable.css");
+@import url("tabelas.css");
+@import url("duasColunas.css");
+@import url("paginacao.css");
+@import url("tipografia.css");
+@import url("links.css");
+@import url("formularios.css");
+@import url("noticiaserros.css");
+@import url("buttons.css");
+@import url("layersExtras.css");
+@import url("jquery-ui.css");
+
+html
+{
+	height:100%;
+	text-align:center;
+}
+
+
+body
+{
+	position:relative;
+	min-height:100%;
+	margin:0;  /* Elimina o espaço entre ele e a tag HTML */
+	display:inline-block;
+	min-width:100%;
+	font-family: "Open Sans", Trebuchet MS, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+
+.capa{ 
+
+	width: 800px;
+	height: 309px;
+	top: 50%;
+	left: 50%;
+	margin-top: -154px;
+	margin-left: -400px;
+	position: absolute;	
+}
+
+#clear{
+	clear:both;	
+}
+
+#header
+{
+	/*background:#82888b url(../../img/sgpLayout/bg.gif) center right;*/
+        background-color: #000;
+	height:41px;
+	margin-bottom: 4px;
+        border-bottom: #808080 solid 4px;
+}
+		
+		/*
+		::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		CONTEÚDO DO HEADER
+		::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		*/
+		
+		/* :::::::::::::::::::::::::::::::::: FORMULÁRIO DE LOGIN */
+		form.login 
+		{
+			/*
+			background-color: #FFFFCC;
+			color: #003399;
+			border: 2px solid #0000FF;
+			*/
+			color: #ffffff; /* cinza: #003399 amarelo: #a26312 */
+			padding:0 0 0 10px;
+			margin-top:10px;
+			margin-right:1.5%;
+			
+			float:right;
+			
+			font-size:0.8em;
+		}
+		
+		form.login .campos 
+		{
+			background-color:#ffffff; /* cinza: #B0E0E6  amarelo: #efe8de */
+			margin:0 20px 0 0;
+			border-width:thin;
+			
+			font: 11px georgia, sans-serif;
+			color:#0033CC;
+		}
+		
+		form.login .botao 
+		{
+			background-color:rgb(85, 4, 4); /* cinza: #CC3300  amarelo:#cc0002 */
+			width:30px;
+			text-align:center;
+			cursor:pointer;
+			border-width:thin;
+			font-weight: bold;
+			
+			font: 11px Arial, sans-serif;
+			color: #fff;
+		}
+		
+		/* Indicação de usuário autenticado */
+		.usuario 
+		{
+			float:right;
+			font-size:10px;
+			margin-right:25px;
+			margin-top:5px;
+			padding-left:28px;
+			background-image:url('../../img/user.png');
+			background-repeat:no-repeat;
+			background-position:1px 2px;
+			min-height:26px;
+			text-align:left;
+			color: #ffffff;
+		}
+		
+		.usuario span 
+		{
+			margin-top:2px;
+			display:block;
+			text-align:left;
+		}
+
+
+
+
+#content 
+{ 
+	border:1px transparent solid;
+
+	padding-top:0;
+	padding-bottom:25px;
+	
+	/*padding-left:1.5em;*/
+	padding-right:1.5em;
+
+	max-width:96em;
+	min-width:30em;
+
+	text-align:left;
+}
+
+
+
+#footer
+{
+	background-color:#000000; /* cinza: #878fa2  amarelo: #dcad4f*/
+	height:25px;
+	
+	border-top:1px #7d7f81 solid; /* cinza:#7d7f81   amarelo:#c09f56 */
+	
+	position: absolute;
+	bottom: 0;
+	
+	width: 100%;
+	
+	padding-bottom:3px;
+	padding-top:2px;
+	
+	text-align:right;
+}
+
+
+
+		#footer img
+		{
+			margin-right:1.5%;
+		}
+
+
+
+ blockquote {
+background:#f9f9f9;
+border-left:6px solid #ccc;
+font-family: Georgia, serif;
+margin:1.5em 10px;
+padding:.5em 10px;
+quotes:"\201C""\201D""\2018""\2019";
+}
+ blockquote:before {
+color:#ccc;
+content:open-quote;
+font-family: cambria, Georgia;
+font-size:4em;
+line-height:.1em;
+margin-right:.25em;
+vertical-align:-.4em;
+}
+ blockquote p {
+display:inline;
+}
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 10px;
+}
+.text-destak{
+    color: #FF0000;
+    font-weight: bold;
+    
+}

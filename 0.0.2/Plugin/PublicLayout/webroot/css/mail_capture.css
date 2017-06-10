@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/03/2017, 18:29:20
+    Author     : Andre
+*/
+.mail-cap{
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    border: 1px #d7d4d4 solid;
+    background-color: #f9f9f9;
+}
+
+.mail-cap-title{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    color: #A5BDC5;
+    padding: 5px 5px 5px;
+    background: #465459;
+    text-align: center;
+    
+    
+}
+.mail-cap-text{
+    width: 96%;
+    height: auto;
+    display: table;
+    text-align: center;
+    font-size: 1.0em;
+    line-height: 1.9em;
+    margin-bottom: 1.0em;
+    padding: 2%;
+}
+.mail-cap-boxmail{
+    margin-top: 10px;
+    width: 100%;
+    float: left;
+    
+    
+    
+}
+
+#mail_cap input[type=submit],
+#mail_cap ul li a,
+#mail_cap a {
+	width: auto;
+	/*background: #5BA150;*/
+	color: #FFFFFF;
+	border-color: #2d6324;
+	padding: 4px 10px;
+	margin-left:12px;
+	text-decoration: none;
+	border: 4px solid #55656b;
+	color: #FFFFFF;
+	font-size: 12px;
+        -moz-border-radius:10em;
+-webkit-border-radius:10em;
+ border-radius:10em;
+}
+#mail_cap ul li a:hover,
+#mail_cap a:hover {
+width: auto;
+background: #5BA150;
+color: #FFFFFF;
+text-decoration: none;
+}
+#mail_cap input[type=submit]:active,
+#mail_cap ul li a:active,
+#mail_cap a:active {
+					width: auto;
+					background: #5BA150;
+					color: #FFFFFF;
+					text-decoration: none;
+					}
+                                        
+
+#mail_cap input[type=email]{
+padding: 3px;
+width: 40%;
+
+
+}
+

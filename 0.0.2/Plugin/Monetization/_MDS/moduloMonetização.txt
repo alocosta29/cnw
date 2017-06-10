@@ -1,0 +1,34 @@
+Módulo de Monetização
+
+A - Configuração de anuncios
+-> Definir tipos de anuncio (largura, altura, tipo, descrição)
+-> Definir categorias de produtos(e-books, cusrso online, etc..)
+-> 
+
+B. Moderação de anúncios/por caderno
+ -> Aprovar anúncios
+ -> Reprovar anúncios
+ -> Listar anúncios aprovados
+ -> Listar anúncios reprovados pelo moderador
+ -> Listar anúncios pendentes para aprovação
+ -> Cadastrar anunciante
+ -> Bloquear anunciante
+ 
+C. Publicação de anúncios
+ -> Criar anúncio 
+fields: Tipo de anuncio, categoria de produo, caderno, palavras-chave, imagem do anuncio, link de compra, data de inicio de veiculação, data de 
+termino de veiculação
+ -> Editar anúncio
+ -> Listar  meus anúncios
+ -> Deletar anúncios 
+
+D. Exibição de anúncios
+ -> Listagem de livros
+ -> Listagem de cursos
+ -> 
+
+
+A mediocridade eh amiga da relativação...
+
+
+

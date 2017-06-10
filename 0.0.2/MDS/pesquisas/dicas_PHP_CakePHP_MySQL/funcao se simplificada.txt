@@ -1,0 +1,1 @@
+!($i % 2) ? $trabalha = 1 : $trabalha = 0;	

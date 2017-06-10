@@ -1,0 +1,343 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* for show */
+html, body {
+  height: 100%;
+}
+ body {
+    font: 100% 'Raleway', arial, verdana, tahoma, sans-serif;
+    line-height: 180%;
+    	min-height:100%;
+	position:relative;
+	
+ }
+ .geral {
+	min-height:100%;
+	position:relative;
+	width:100%;
+}
+ 
+ #redes-sociais{
+     float: right;
+     min-height: 20px;
+     list-style: none;
+     padding-top: 1em;
+     
+     
+ }
+
+
+#redes-sociais li{
+float:left;
+display: block;
+margin-left: 0.9em;
+
+}
+ 
+ 
+  #redes-sociais img{
+      max-height: 30px;
+      
+      
+  }
+ 
+ 
+ 
+header.main{
+    width: 100%;
+    height: auto;
+    display: table;
+    background-color: #c02230;
+    padding-top: 0.5em;
+   /* padding-bottom: 0.5em;*/
+   /* background-color: #222;*/
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}   
+
+.listArticle{
+    display: block;
+    max-width: 70%;
+    width: 70%;
+    float: right;
+}
+
+.content_header{
+    width: 85%;
+    height: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar ul li a{
+    display: block;
+    margin-bottom: 1.1 em;
+    text-align: center;
+    padding-bottom: 0.8em;
+    padding-top: 0.8em;
+   /* border-left: 0.5em solid #5f5f5f;*/
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color:#fff;
+    font-weight: bolder;
+    border-left: 0.7em solid rgba(0,0,0,0.5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; 
+    text-align: center;
+    text-decoration: none;
+       /* cursor: default;*/
+    
+}
+.logo{
+    padding: 6px;
+   /* border-left: 2px solid #fff;
+    border-right: 2px solid #fff;*/
+    width: 20%;
+    min-width: 200px;
+    float: left;
+}
+.widget_header{
+       padding: 6px;
+   /* border-left: 2px solid #fff;
+    border-right: 2px solid #fff;*/
+    width: 60%;
+    float: right;
+ 
+}
+.search-box{
+  float: right;
+  min-height: 60px;
+  min-width: 60px;
+  display: block;
+  /*  position: relative;*/
+    
+    
+}
+
+
+.logo img {
+    width: 20%;
+    min-width: 200px;
+    margin: auto;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+}
+
+.content{
+    width: 85%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar{
+      float: right;  
+      width: 25%;
+    height: auto;
+}
+
+.contentMain{
+    width: 73%;
+    height: auto;
+    float: left;
+    margin-bottom: 100px;
+    line-height: 2.2em;
+    text-align: justify;
+}
+
+article{
+    margin-bottom: 20px;
+    width: 95%;
+    padding-bottom: 20px;
+    display: table;
+    border-bottom: 0.1em solid #C0C0C0;
+}
+
+.figure {
+    min-width: 198px;
+    min-height: 144px;
+    max-width: 100%;
+    float: left;
+    margin-right: 5px;
+    position: relative;
+}
+.figure h3 {
+    padding-bottom: 1px;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    height: auto;
+    float:left;
+    text-align: center;
+    color:#fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    
+}   
+.figure img {
+    display: block;
+    width: 100%;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    background: #fff;
+    padding: 0 5px 5px;
+}​
+
+footer{
+    width: 100%;
+    background-color: #3B4B4C;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer{
+    position:absolute;
+	
+    width: 100%;
+    background-color: #3B4B4C;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*position: absolute;*/
+    display: table;
+    bottom:0;
+}
+.wrap-footer{
+    width: 85%;
+    background-color: #3B4B4C;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+#left-footer{
+    width: 42%;
+    padding-top: 0.3em;
+    padding-bottom: 0.2em;
+    float: left;
+    line-height: 3em;
+    color: #fff;
+}
+#center-footer{
+    width: 15%;
+    float: left;
+    padding-top: 0.3em;
+    padding-bottom: 0.2em;
+}
+#right-footer{
+    padding-top: 0.3em;
+    padding-bottom: 0.2em;
+     width: 42%;
+    float: right;
+    color: #fff;
+    line-height: 3em;
+}
+
+#center-footer img{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#right-footer ul{
+list-style: none;
+float: right;    
+}
+
+#right-footer ul li{
+float:left;
+display: block;
+margin-left: 0.7em;
+
+}
+
+#right-footer ul li a:link{
+color:#fff;
+text-decoration: none;
+}
+
+#right-footer ul li a:active{
+color:#fff;
+text-decoration: none;
+}
+#right-footer ul li a:hover{
+color:#fff;
+text-decoration: underline;
+}
+
+#right-footer ul li a:visited{
+color:#fff;
+text-decoration: none;
+}
+
+.nameCol:link  {
+    text-decoration: none;
+    font-weight: bold;
+    color: #c02230;
+}
+ .nameCol:hover  {
+    text-decoration: underline;
+    font-weight: bold;
+     color: #c02230;
+}
+.nameCol:visited   {
+     color: #c02230;
+     font-weight: bold;
+    text-decoration: none;
+}
+.nameCol:active  {
+     color: #c02230;
+     font-weight: bold;
+    text-decoration: none;
+}
+    

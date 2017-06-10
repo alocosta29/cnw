@@ -1,0 +1,80 @@
+@charset "utf-8";
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+/* CSS Document */
+html, body {height:100%;} 
+body {
+	font: normal 100% "Open Sans", verdana, tahoma, sans-serif;
+	margin:0;
+	padding:0;	
+		
+	}
+.marginTop{
+	height:10px;
+	width:100%;
+	background-color:#b20514;
+}
+#logo{
+	float:left;
+	width: 287px;
+	height:73px;
+	
+	
+}
+.logoImg{
+	
+	width: 287px;
+	height:73px;
+	
+	
+}
+#menu{
+	
+	
+	
+	
+}
+
+.header{
+	
+	
+	
+	
+	
+	
+	
+
+}
+	
+
+/* -------------------------------------------------------------
+ * para monitores com no máximo 1440px (19" W) de largura 
+-------------------------------------------------------------*/
+@media screen and (min-width: 801px) {
+	
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 800px (14") de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+
+
+
+}
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 640px (iPhone 4) de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 640px) {
+
+}
+
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 360px (Sony xperia) de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 360px) {
+
+}
+
+
+

@@ -1,0 +1,38 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+
+
+/* botão estilo verde (input tradicional cakephp) - tambem pode ser usado como link*/
+.actions2 input[type=submit],
+.actions2 ul li a,
+.actions2 a {
+	width: auto;
+	background: #5BA150;
+	color: #FFFFFF;
+	border-color: #2d6324;
+	padding: 8px 10px;
+	margin-left:12px;
+	text-decoration: none;
+	border: 1px solid #008000;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+.actions2 ul li a:hover,
+.actions2 a:hover {
+width: auto;
+background: #5BA150;
+color: #FFFFFF;
+text-decoration: none;
+}
+.actions2 input[type=submit]:active,
+.actions2 ul li a:active,
+.actions2 a:active {
+					width: auto;
+					background: #5BA150;
+					color: #FFFFFF;
+					text-decoration: none;
+					}

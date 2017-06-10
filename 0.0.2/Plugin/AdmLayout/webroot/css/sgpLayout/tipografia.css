@@ -1,0 +1,122 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Tipografia
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+
+/* :::::::::::::::::::::::::::::::::: GERAL */
+body 
+{
+	
+	font-family: 'lucida grande', verdana, helvetica, arial, sans-serif;
+	font-size: 90%; 
+	/**/
+	
+	
+		
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------ */
+
+h1, h3, h4 {
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+h1 {
+	background: #fff;
+	color: #003d4c;
+	font-size: 0.5em;
+}
+h3 {
+	color: #2c6877;
+	font-family: 'Gill Sans', 'lucida grande', helvetica, arial, sans-serif;
+	font-size: 1em;
+}
+h4 {
+	color: #993;
+	font-weight: normal;
+}
+ul, li {
+	margin: 0 12px;
+}
+p {
+	margin: 0 0 1em 0;
+}
+
+
+
+
+
+#header h1 
+{
+	line-height: 20px;
+	background: #003d4c url('../img/cake.icon.png') no-repeat left;
+	color: #fff;
+	padding: 0px 30px;
+}
+#header h1 a 
+{
+	color: #fff;
+	background: #003d4c;
+	font-weight: normal;
+	text-decoration: none;
+}
+#header h1 a:hover 
+{
+	color: #fff;
+	background: #003d4c;
+	text-decoration: underline;
+}
+
+
+
+
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Títulos & Subtítulos
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+h2
+{
+	text-transform: uppercase;
+	margin-bottom: 0.5em;
+	color: #000;
+	font-size:18px;
+	font-weight: bold;
+        color: 	#008000;
+}
+
+.text-destak{
+    
+    color: #FF0000; font-weight: bold; 
+    
+}
+
+
+.success-destak{
+    
+    color: #008000; 
+    font-weight: bold; 
+    
+}
+
+
+.assist #titleButtons{
+    display: block;
+    padding: 5px 15px;
+    text-align: center;
+    background-color: #3B4148;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    
+    
+}

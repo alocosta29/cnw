@@ -1,0 +1,21 @@
+Programação portal
+
+A - Página inicial (home)
+1. 5 artigos em destaque (1 em maior destaque)
+2. até 4 artigos em destaque menor
+3. nome dos cadernos ok
+
+B - Página de exibição do artigo (artigo)
+1. retorno do artigo selecionado
+2. dados do caderno selecionado
+3. informações do formulário de captura de e-mail do caderno selecionado
+4. subcategorias do caderno***
+5. sobre o autor
+
+
+C - Página de exibição dos artigos referentes ao caderno ()
+1. artigos do caderno com paginação
+2. dados do caderno selecionado
+3. informações do formulário de captura de e-mail do caderno selecionado
+4. subcategorias do caderno**
+

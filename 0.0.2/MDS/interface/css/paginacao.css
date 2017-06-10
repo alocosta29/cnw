@@ -1,0 +1,43 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+
+div.paging 
+{
+	color: #ccc;
+	margin-top: 0.3em;
+	margin-bottom: 1px;
+	clear:both;
+	font-size:11px;
+	font-family:"Arial";
+}
+div.paging span.disabled 
+{
+	color: #ddd;
+	display: inline;
+}
+div.paging span.current 
+{
+	color: #ffffff;
+	font-weight:bold;
+	background-color:#4589de;
+	padding-left:2px;
+	padding-right:2px;
+}
+div.paging span a 
+{
+	text-decoration:none;
+}
+div.paging .contadores
+{
+	color: #274969;
+	padding-left:0;
+	margin-top:0;
+}
+
+
+
+

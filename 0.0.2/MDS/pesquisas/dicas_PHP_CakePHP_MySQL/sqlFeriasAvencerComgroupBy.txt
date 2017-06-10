@@ -1,0 +1,43 @@
+SELECT Vac01.employee_id, Vac01.pa_inicio, Vac01.pa_fim, Vac01.data_inicio, Vac01.numero_dias, Vac01.status
+FROM gp_vacations As Vac01
+INNER JOIN (
+				SELECT gp_vacations.employee_id, MAX(gp_vacations.pa_fim) As lastPaFim
+				    FROM gp_vacations 
+					 WHERE gp_vacations.isdeleted = 'N'
+					 GROUP BY gp_vacations.employee_id
+				    ORDER BY lastPaFim DESC
+				    
+				) as Vac02
+ON Vac01.employee_id = Vac02.employee_id AND Vac01.pa_fim = Vac02.lastPaFim
+LEFT JOIN gp_employees
+ON Vac01.employee_id = gp_employees.id
+WHERE gp_employees.isactive = 'Y'
+ORDER BY Vac01.pa_fim ASC
+
+
+
+SELECT 
+Employee.id, Employee.person_id, Employee.sector_id, Employee.profession_id, Vacation.newPaInicio 
+FROM gp_employees as Employee
+INNER JOIN (
+						SELECT 
+						Vac01.employee_id, Vac01.pa_inicio, Vac01.pa_fim, Vac01.numero_dias, 
+						Vac01.status, 
+						date_add(Vac01.pa_fim, interval 1 day) as newPaInicio
+						FROM gp_vacations As Vac01
+						INNER JOIN (
+											SELECT gp_vacations.employee_id, MAX(gp_vacations.pa_fim) As lastPaFim
+											    FROM gp_vacations 
+												 WHERE gp_vacations.isdeleted = 'N'
+												 GROUP BY gp_vacations.employee_id
+											    ORDER BY lastPaFim DESC
+											    
+										) as Vac02
+						ON Vac01.employee_id = Vac02.employee_id AND Vac01.pa_fim = Vac02.lastPaFim
+						LEFT JOIN gp_employees
+						ON Vac01.employee_id = gp_employees.id
+						WHERE gp_employees.isactive = 'Y'
+						ORDER BY Vac01.pa_fim ASC
+			) AS Vacation
+ON Employee.id = Vacation.employee_id
+ORDER BY Vacation.newPaInicio ASC

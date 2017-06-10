@@ -1,0 +1,40 @@
+a 
+{
+	color: #003d4c;
+	text-decoration: underline;
+	font-weight: bold;
+}
+a:hover 
+{
+	color: #367889;
+	text-decoration: none;
+}
+a img 
+{
+	border: none;
+}
+
+
+
+
+
+
+
+
+.usuario a:link {
+	color: #fff;
+	text-decoration: none;
+}
+.usuario a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.usuario a:hover {
+	color: #fff;
+	text-decoration:underline;
+}
+.usuario a:active {
+	color: #fff;
+	text-decoration: none;
+}
+

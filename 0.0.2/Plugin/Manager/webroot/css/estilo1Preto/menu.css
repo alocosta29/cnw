@@ -1,0 +1,84 @@
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+MENU GLOBAL
+
+Observações:
+(1) Parte do background é composto pelo cabeçalho do layout( #header) em outro arquivo '.css'.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+		/* Sigla identificador do Sistema */
+		li.siglaSystem a{
+		background:transparent url(../../img/identificacaoSistema.png) no-repeat center right;
+		width:78px;
+		cursor:default;
+		}
+		.mhjscss li.siglaSystem:hover a,.mhjscss .ajxover a{
+		background:transparent url(../../img/identificacaoSistema.png) no-repeat center right;
+		}
+
+
+		
+		.mhjscss 
+		{
+			/*margin-bottom:-10px;*/
+			/*position:relative;*/
+			/*z-index:207;*/
+			/*width:100%;*/
+			z-index:10000;
+			float:left;
+			min-width:460px;
+			height:41px;
+			background:#2e6fa9 url(../../img/menu/bg.gif) center right;
+			text-align:left;
+			font-size:40px;
+			color:#FFFFFF;
+			margin-left:0;
+		}
+		
+		* html .mhjscss .ajxmw1 {float:left;height: 1px;border-left:590px solid #fff; border:1px yellow solid;}
+		* html .mhjscss .ajxmw2 {border:1px majenta solid; position:relative;margin-left:-590px;height: 1px;background:#2e6fa9 url(../../img/menu/bg.gif) center right;}
+		
+		.mhjscss ul {position:relative;display:inline-block;margin:0;padding:0;list-style-type:none;z-index:10000;}
+		* html .mhjscss ul {display:inline;}
+		*+html .mhjscss ul {display:inline;}
+		
+		.mhjscss li {float:left;margin:0;z-index:10000;}
+		.mhjscss li:hover,.mhjscss .ajxover {position:relative;}
+		
+		/* Cor do menu + background, ...  | cinza:#717a8d   amarelo:#c27922 */
+		.mhjscss a {color:#ffffff;display:block;float:left;height:41px;white-space:nowrap;overflow:hidden;padding:0 12px 0 12px;font:bold 12px/41px 'Open Sans', helvetica, lucida grande, verdana, arial, sans-serif;text-decoration:none;text-align:center;background:url(../../img/menu/bg_menu.gif) top right;}
+		/* Cor do menu holover + background | amarelo: #ffffff */
+		.mhjscss li:hover a,.mhjscss .ajxover a {color:#ffffff;background:#fed173 url(../../img/menu/bg_menu.gif) bottom right;z-index:10000;}
+		
+		/* Background de menu que possui submenu + holover, ... */
+		.mhjscss a.ajxsub {padding:0 26px 0 12px;background:url(../../img/menu/bg_menuCOMsubmenu.gif) top right;}
+		.mhjscss li:hover a.ajxsub,.mhjscss .ajxover a.ajxsub {background:#fed173 url(../../img/menu/bg_menuCOMsubmenu.gif) bottom right;}
+		
+		/* Background do submenu, ... | cinza:#bfcad6   amarelo: #eec87c*/
+		.mhjscss ul ul {background:#666666;position:absolute;display:block;left:-9999px;top:-9999px;width:202px;height:auto;}
+		
+		/* Ajusta a distância do submenu que NÃO possui submenu em relação ao menu, ... */
+		.mhjscss ul :hover ul,.mhjscss ul .ajxover ul {left:-1px;top:42px;} /* 41px */
+		.mhjscss li li {width:200px; border:1px solid #ffffff; border-width:0 1px; padding:0}
+		
+		/* Ajusta a "distância" (borda cujo efeito...) do submenu que possui submenu em relação ao menu, ... */
+		.mhjscss li li.sfirst {border-top:0 solid #ffffff;} /* 1px*/
+		.mhjscss li li.slast {border-bottom:1px solid #ffffff;}
+		
+		.mhjscss ul ul a,.mhjscss ul :hover ul a,.mhjscss ul :hover ul :hover ul a,.mhjscss ul .ajxover ul a,.mhjscss ul .ajxover ul .ajxover ul a {float:none;margin:0;width:176px;height:auto;white-space:normal;padding:9px 12px 9px 12px;font:12px/12px 'Open sans', Helvetica, Arial, sans-serif;text-decoration:none;text-align:left;border:0;color:#ffffff;background:none;}
+		
+		/* Holover do submenu | cinza:#3f4958  amarelo: #a16212*/
+		.mhjscss ul ul :hover a,.mhjscss ul ul :hover ul :hover a,.mhjscss ul ul .ajxover a,.mhjscss ul ul .ajxover ul .ajxover a {background:#3f4958;}
+		
+		/* Seta pra direita */
+		.mhjscss ul ul a.ajxsub,.mhjscss ul :hover ul a.ajxsub,.mhjscss ul .ajxover ul a.ajxsub {width:172px;padding:9px 16px 9px 12px;background:url(../../img/menu/setaDireita.gif) no-repeat center right;}
+		
+		/* Holover do submenu + seta pra direita | cinza:#3f4958  amarelo: #a16212 */
+		.mhjscss ul ul :hover a.ajxsub,.mhjscss ul ul .ajxover a.ajxsub {background:#3f4958 url(../../img/cinza/setaDireita.gif) no-repeat center right;}
+		.mhjscss ul :hover ul ul,.mhjscss ul .ajxover ul ul {position:absolute;left:-9999px;top:-9999px;}
+		
+		/* Ajusta a distância do submenu do submenu em relação ao menu, ... */
+		.mhjscss ul :hover ul :hover ul,.mhjscss ul .ajxover ul .ajxover ul {left:200px;top:0;} /* -1px*/
+		
+		.mhjscss br {clear:both;height:0;font-size: 1px;line-height: 0px;}
+

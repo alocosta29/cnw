@@ -1,0 +1,21 @@
+		$options = array("fields"=>array('Sector.setor', 'Sector.id', 'Profession.cargo', 'Profession.id', 
+		'COUNT(Employee.profession_id) as vagasPreenchidas'),
+		'joins'=>array(
+						array(
+					        	"table" => "gp_professions",
+		                        "type" => "LEFT",
+		                        "conditions" => array("Employee.profession_id = gp_professions.id")
+						),
+			            array(
+		                        "table" => "gp_sectors",
+		                        "type" => "LEFT",
+		                        "conditions" => array("Employee.sector_id = gp_sectors.id"))
+								),
+								
+		'conditions'=>array(
+		'Employee.isdeleted'=>'N', 'Employee.isactive'=>'Y'),
+		'group'=>array('Employee.profession_id'),
+		'order'=>array('Profession.cargo'=>'ASC'));
+
+
+$quadro = $this->Employee->find('all', $options);

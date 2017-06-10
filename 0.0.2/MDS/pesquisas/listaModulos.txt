@@ -1,0 +1,99 @@
+Permissões por nível de usuário
+
+################################## Superuser ##################################
+
+** CONFIGURAÇÃO DE GRUPOS DE ACESSO
+*** plugin: Manager
+**** nome do módulo: Controle de acesso
+ - Cadastrar grupo de acesso
+ - Editar grupo de acesso
+ - Deletar grupo de acesso
+ - Listar grupos de acesso
+ - Gerenciar permissões de grupo
+
+**CONFIGURAÇÃO DOS MÓDULOS QUE TERÃO ACESSO POR USUÁRIO
+***plugin: packages
+ - cadastrar pacotes
+ - editar pacotes
+ - ativar/desativar pacotes
+ - excluir pacotes
+
+
+** GERENCIAMENTO DE USUÁRIOS
+*** plugin: Manager
+**** nome do módulo:gerenciamento de usuários 
+ - cadastrar usuários
+ - Editar dados de usuário
+ - Ativar/desativar usuários
+ - Visualizar dados de usuário
+ - Consultar usuários
+
+** CONFIGURAÇÃO DE CADERNOS
+*** plugin: ConfigBook
+**** nome do módulo:configuração de cadernos
+ - Criar/editar caderno
+ - Ativar/Desativar caderno
+ - Deletar caderno
+
+**GERENCIAMENTO DE CADERNOS
+***plugin: ManagerBook
+****nome do módulo:Gerenciamento de cadernos
+ - Cadastrar/editar categoria
+ - Listar categorias
+ - Deletar categoria
+ - Autorizar/não autorizar colunistas
+
+**PERMISSÕES DE USUÁRIOS
+ - Atribuir/deletar administrador de cadernos
+
+
+
+##################################Administrador#####################################
+
+**GERENCIAMENTO DE USUÁRIOS
+ - cadastrar usuários
+ - Editar dados de usuário
+ - Ativar/desativar usuários
+ - Visualizar dados de usuário
+ - Consultar usuários
+
+**GERENCIAMENTO DE CADERNOS
+***plugin: ManagerBook
+****nome do módulo:Gerenciamento de cadernos
+    - Cadastrar/editar categoria
+    - Listar categorias
+    - Deletar categoria
+    - Autorizar/não autorizar colunistas
+ 
+**PERMISSÕES DE USUÁRIOS
+ - Atribuir/deletar administrador de cadernos
+
+#####################################Administrador de cadernos##################################
+
+**GERENCIAMENTO DE CADERNOS
+***plugin: ManagerBook
+****nome do módulo:Gerenciamento de cadernos
+ - Cadastrar/editar categoria
+ - Listar categorias
+ - Deletar categoria
+ - Autorizar/não autorizar colunistas
+ - Autorizar/negar publicação artigos
+
+**ARTIGOS
+***plugin: Articles
+****nome do módulo:Artigos
+ - Cadastrar colunista 
+ - Criar/Editar artigos
+
+###################################Colunistas####################################
+**ARTIGOS
+***plugin: Articles
+****nome do módulo:Artigos
+ - Cadastrar colunista 
+ - Criar/Editar artigos
+
+
+#######################################################################
+
+
+

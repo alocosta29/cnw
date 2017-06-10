@@ -1,0 +1,66 @@
+Permissões por nível de usuário
+
+################################## 1. Superuser ##################################
+
+** CONFIGURAÇÃO DE GRUPOS DE ACESSO
+*** plugin: Manager
+**** nome do módulo: Controle de acesso
+ - Cadastrar grupo de acesso
+ - Editar grupo de acesso
+ - Deletar grupo de acesso
+ - Listar grupos de acesso
+ - Gerenciar permissões de grupo
+
+**CONFIGURAÇÃO DOS MÓDULOS QUE TERÃO ACESSO POR USUÁRIO
+***plugin: packages
+ - cadastrar pacotes
+ - editar pacotes
+ - ativar/desativar pacotes
+ - excluir pacotes
+
+** CONFIGURAÇÃO DE CADERNOS
+*** plugin: ConfigBook
+**** nome do módulo:configuração de cadernos
+ - Criar/editar caderno
+ - Ativar/Desativar caderno
+ - Deletar caderno
+
+##################################2. Administrador#####################################
+** GERENCIAMENTO DE USUÁRIOS
+*** plugin: Manager
+**** nome do módulo:gerenciamento de usuários
+ - cadastrar usuários
+ - Editar dados de usuário
+ - Ativar/desativar usuários
+ - Visualizar dados de usuário
+ - Consultar usuários
+ -  Configurar permissões de usuários
+
+ - Configurar permissões especiais:
+   * Cadastrar/autorizar administrador de cadernos
+   ** cadastrar a si mesmo como gerente de cadernos
+   ***Não mexer no cadastro de outros administradores
+
+##################################3. Administrador de cadernos#####################################
+**GERENCIAMENTO DE CADERNOS
+***plugin: ManagerBook 
+****nome do módulo:Gerenciamento de cadernos
+ - Cadastrar/editar categoria
+ - Listar categorias
+ - Deletar categoria
+ - Autorizar/não autorizar publicações
+ - Autorizar/não autorizar colunistas
+ - Cadastrar novos colunistas
+
+
+###################################Colunistas####################################
+
+**ARTIGOS
+***plugin: Articles
+****nome do módulo:Artigos
+ - Cadastrar colunista 
+ - Criar/Editar artigos
+
+
+
+

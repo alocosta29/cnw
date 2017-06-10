@@ -1,0 +1,157 @@
+2017-06-08 09:09:21 Error: [MissingControllerException] Controller class LABORATORIOSController could not be found.
+Exception Attributes: array (
+  'class' => 'LABORATORIOSController',
+  'plugin' => NULL,
+)
+Request URL: /LABORATORIOS/0.0.2/LABORATORIOS/0.0.2/img/favicon.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:11:30 Error: [MissingTableException] Table users for model User was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'users',
+  'class' => 'User',
+  'ds' => 'default',
+)
+Request URL: /LABORATORIOS/0.0.2/notifications/notifications/regs
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(3667): Model->setSource('users')
+#1 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1394): Model->getDataSource()
+#2 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1418): Model->schema()
+#3 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(110): Model->getColumnTypes()
+#4 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(94): LocaleBehavior->__checkConfig(Object(User), Array)
+#5 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(145): LocaleBehavior->setup(Object(User), Array)
+#6 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(66): BehaviorCollection->load('Locale.Locale', Array)
+#7 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(781): BehaviorCollection->init('User', Array)
+#8 [internal function]: Model->__construct(Array)
+#9 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Utility/ClassRegistry.php(169): ReflectionClass->newInstance(Array)
+#10 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1084): ClassRegistry::init(Array)
+#11 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(893): Model->_constructLinkedModel('User', 'User', 'Manager')
+#12 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(926): Model->__isset('User')
+#13 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Datasource/DboSource.php(1159): Model->__get('User')
+#14 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(3038): DboSource->read(Object(AccessUser), Array)
+#15 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(3010): Model->_readDataSource('all', Array)
+#16 /var/www/html/LABORATORIOS/0.0.2/Plugin/AccessUsers/Controller/Component/CheckPermissionComponent.php(145): Model->find('all', Array)
+#17 /var/www/html/LABORATORIOS/0.0.2/Plugin/AccessUsers/Controller/Component/CheckPermissionComponent.php(81): CheckPermissionComponent->setMenu()
+#18 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/ManagerAppController.php(154): CheckPermissionComponent->checkUserControl('Notifications', Array)
+#19 [internal function]: ManagerAppController->beforeFilter(Object(CakeEvent))
+#20 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Event/CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#21 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Controller/Controller.php(677): CakeEventManager->dispatch(Object(CakeEvent))
+#22 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(189): Controller->startupProcess()
+#23 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(NotificationsController), Object(CakeRequest))
+#24 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#25 {main}
+2017-06-08 09:11:50 Error: [MissingTableException] Table configmails for model Configmail was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'configmails',
+  'class' => 'Configmail',
+  'ds' => 'default',
+)
+Request URL: /LABORATORIOS/0.0.2/notifications/notifications/regs
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(3667): Model->setSource('configmails')
+#1 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1394): Model->getDataSource()
+#2 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1418): Model->schema()
+#3 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(110): Model->getColumnTypes()
+#4 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(94): LocaleBehavior->__checkConfig(Object(Configmail), Array)
+#5 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(145): LocaleBehavior->setup(Object(Configmail), Array)
+#6 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(66): BehaviorCollection->load('Locale.Locale', Array)
+#7 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(781): BehaviorCollection->init('Configmail', Array)
+#8 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/Component/RemetenteComponent.php(11): Model->__construct()
+#9 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Controller/ComponentCollection.php(116): RemetenteComponent->__construct(Object(ComponentCollection), Array)
+#10 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('Manager.Remeten...', Array)
+#11 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Controller/Controller.php(644): ComponentCollection->init(Object(NotificationsController))
+#12 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#13 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(NotificationsController), Object(CakeRequest))
+#14 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2017-06-08 09:12:10 Error: [MissingTableException] Table menugroups for model Menugroup was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'menugroups',
+  'class' => 'Menugroup',
+  'ds' => 'default',
+)
+Request URL: /LABORATORIOS/0.0.2/notifications/notifications/regs
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(3667): Model->setSource('menugroups')
+#1 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1394): Model->getDataSource()
+#2 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(1418): Model->schema()
+#3 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(110): Model->getColumnTypes()
+#4 /var/www/html/LABORATORIOS/0.0.2/Plugin/Locale/Model/Behavior/LocaleBehavior.php(94): LocaleBehavior->__checkConfig(Object(Menugroup), Array)
+#5 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(145): LocaleBehavior->setup(Object(Menugroup), Array)
+#6 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/BehaviorCollection.php(66): BehaviorCollection->load('Locale.Locale', Array)
+#7 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Model/Model.php(781): BehaviorCollection->init('Menugroup', Array)
+#8 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/Component/MenuSuperiorComponent.php(142): Model->__construct()
+#9 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/Component/MenuSuperiorComponent.php(122): MenuSuperiorComponent->_mesclaMenuPais(Array)
+#10 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/Component/MenuSuperiorComponent.php(81): MenuSuperiorComponent->_retornaMenuPais(Array)
+#11 /var/www/html/LABORATORIOS/0.0.2/Plugin/Manager/Controller/ManagerAppController.php(142): MenuSuperiorComponent->retornaMenu()
+#12 [internal function]: ManagerAppController->beforeFilter(Object(CakeEvent))
+#13 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Event/CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#14 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Controller/Controller.php(677): CakeEventManager->dispatch(Object(CakeEvent))
+#15 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(189): Controller->startupProcess()
+#16 /var/www/html/LABORATORIOS/0.0.2/Cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(NotificationsController), Object(CakeRequest))
+#17 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2017-06-08 09:27:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /LABORATORIOS/0.0.2/css/estilo1Preto/formularios.css
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => 'Manager',
+)
+Request URL: /LABORATORIOS/0.0.2/manager/css/images/ui-icons_888888_256x240.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => 'Manager',
+)
+Request URL: /LABORATORIOS/0.0.2/manager/css/images/ui-icons_454545_256x240.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => 'Manager',
+)
+Request URL: /LABORATORIOS/0.0.2/manager/css/images/ui-icons_454545_256x240.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /LABORATORIOS/0.0.2/css/estilo1Preto/formularios.css
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => 'Manager',
+)
+Request URL: /LABORATORIOS/0.0.2/manager/css/images/ui-icons_454545_256x240.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-06-08 09:27:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => 'Manager',
+)
+Request URL: /LABORATORIOS/0.0.2/manager/css/images/ui-icons_888888_256x240.png
+Stack Trace:
+#0 /var/www/html/LABORATORIOS/0.0.2/webroot/index.php(98): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

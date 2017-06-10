@@ -1,0 +1,429 @@
+<?php
+/**
+ * Controller responsável pela abertura e fechamento de escala dos colaboradores
+ * @name Journeys
+ */
+App::uses('JourneyAppController', 'Journey.Controller');
+
+class JourneysController extends JourneyAppController {
+	public $uses = array('Manager.Person', 'Journey.Journey', 'Journey.MonthlyJourney');
+	public $components = array('Journey.JourneyDataProcessing', 'Journey.JourneyValid', 'EmployeeData');
+	
+	public function admin_index() 
+	{	
+		$options = array(
+			'conditions'=>array('NOT'=>array('Journey.isdeleted'=>'Y')),
+			'order' => array('Journey.id' => 'DESC'),
+			'limit' => 20
+		);
+		$this->paginate = $options;
+		$Journeys = $this->paginate('Journey');
+		$this->set('Journeys', $Journeys);
+	}
+
+	public function admin_reabreJourney($id = null)
+	{
+			$this->Journey->id = $id;
+			if (!$this->Journey->exists()) 
+			{
+				throw new NotFoundException(__($this->Mensagens->registroInvalido));
+			}				
+			$JourneyParaAtivar['Journey']['isclosed']='N';
+			$JourneyParaAtivar['Journey']['id'] = $id;
+			if($this->Journey->saveAll($JourneyParaAtivar))
+			{
+				$this->Session->setFlash(__('Edição de escala reaberta com sucesso.!!'), 'default', array('class' => 'success'));
+				$this->redirect(array('action' => 'index', 'admin'=>TRUE));
+			}
+			$this->Session->setFlash(__('A edição da escala não pode ser reaberta. Por favor tente novamente'), 'default', array());
+			$this->redirect(array('action' => 'index', 'admin'=>TRUE));
+	}
+	/**
+	 * @name fecha jornada
+	 */
+	public function admin_fechaJourney($id = null)
+	{
+			$this->Journey->id = $id;
+			if (!$this->Journey->exists()) 
+			{
+				throw new NotFoundException(__($this->Mensagens->registroInvalido));
+			}
+								
+			$JourneyParaDesativar['Journey']['isclosed']='Y';
+			$JourneyParaDesativar['Journey']['id'] = $id;
+			if($this->Journey->saveAll($JourneyParaDesativar))
+			{
+				$this->Session->setFlash(__('A escala foi fechada com sucesso!!'), 'default', array('class' => 'success'));
+				$this->redirect(array('action' => 'index', 'admin'=>TRUE));
+			}
+			$this->Session->setFlash(__('A escala não pode ser fechada. Por favor tente novamente'), 'default', array());
+			$this->redirect(array('action' => 'index', 'admin'=>TRUE));
+	}
+
+	public function _getDocComment($str, $tag = '') 
+	{ 
+	    if (empty($tag)) 
+	    { 
+	        return $str; 
+	    } 
+	
+	    $matches = array(); 
+	    preg_match("/".$tag."(.*)(\\r\\n|\\r|\\n)/U", $str, $matches); 
+	
+	    if (isset($matches[1])) 
+	    { 
+	        return trim($matches[1]); 
+	    } 
+	
+	    return ''; 
+	} 
+
+
+	/**
+	 * Função que cria as escalas mensais.
+	 * @name AdicionarEscala
+	 * Detalhe: Só irá criar caso exista colaborador que possui escala.
+	 */
+	public function admin_add() 
+	{	
+		$listaColaboradores = $this->JourneyDataProcessing->_retornaEmployeesEscala();
+		//$obj = new JourneysController;
+		//$rc = new ReflectionMethod($obj, 'admin_add');
+		//var_dump($rc->getDocComment());
+		
+		//$method = new ReflectionMethod('JourneysController', 'admin_fechaJourney'); 
+		$method = new ReflectionMethod('JourneyDataProcessingComponent', '_criarEscalaColaborador'); 
+
+	// will return Hello World! 
+	echo $this->_getDocComment($method->getDocComment(), '@name');
+		
+		
+		
+		//pr($listaColaboradores);
+		exit(0);
+		
+		if(!empty($listaColaboradores))
+		{	
+				if($this->request->is('post') || $this->request->is('put'))
+				{
+					$data = $this->request->data;
+					$verificaExistenciaEscala = $this->JourneyValid->_verificaExistenciaEscalaMes($data);
+					
+					if($verificaExistenciaEscala['resposta'] == true)
+					{
+						$this->Journey->create();
+						if($this->Journey->save($data)){
+							$this->JourneyDataProcessing->_criarEscalaColaborador($listaColaboradores, $this->Journey->id);		
+							$this->Session->setFlash(__($this->Mensagens->sucessoAdd), 'default', array('class' => 'success'));
+							$this->redirect(array('action' => 'index'));
+						}else{
+							$this->Session->setFlash(__($this->Mensagens->falhaAdd), 'default', array('class' => 'error'));
+						}
+					}else{
+						$this->Session->setFlash(__('Já existe uma escala gerada para o mês informado.'), 'default', array());
+					}
+				}				
+		}
+		else
+		{
+			$this->Session->setFlash(__('Não existe nenhum colaborador ativo com escala em seu quadro.'), 'default', array());
+			$this->redirect(array('action' => 'index', 'admin'=>TRUE));	
+		}		
+	}
+
+	/**
+	 * Função que irá listar os colaboradores para permitir a edição dos mesmos
+	 */
+	public function admin_configEscala($id = null)
+	{
+		$this->Journey->id = $id;
+		if (!$this->Journey->exists()) 
+		{
+			throw new NotFoundException(__($this->Mensagens->registroInvalido));
+		}
+		$verificaSituacaoEscala = $this->JourneyValid->_verificaStatusEscala($id);
+
+		if($verificaSituacaoEscala['resposta'] == true)
+		{
+			$options = $this->JourneyDataProcessing->_retornaParametrosConsulta($id);
+			$this->paginate = $options;
+			$employees = $this->paginate('Person');
+			$journey = $this->Journey->findById($id);
+			$this->set('journey', $journey);
+			$this->set('employees', $employees);
+			$this->set('escala', $id);
+		}else{
+			$this->Session->setFlash(__($verificaSituacaoEscala['msg']), 'default', array());
+			$this->redirect(array('action' => 'index'));	
+		}	
+	}
+
+	/**
+	 * Método que permitirá a edição da folha individual dos colaboradores
+	 */
+	public function admin_editarEscala()
+	{
+		$params['employee_id'] = $this->params['url']['colaborador'];
+		$params['journey_id'] = $this->params['url']['escala'];
+		$escalas = $this->JourneyValid->_verificaEscala($params);
+		$verificaStatus = $this->JourneyValid->_verificaStatusEscala($params['journey_id']);
+			if($verificaStatus['resposta'] == true)
+			{
+				if(isset($escala['resposta']) and $escala['resposta'] == false)
+				{
+					$this->Session->setFlash(__($escala['msg']), 'default', array('class' => 'error'));
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$dados = $this->EmployeeData-> _employeePersons($this->EmployeeData-> _retornaPersonId($params['employee_id']));	
+					$journey = $this->Journey->findById($params['journey_id']);
+				
+					$this->set('dados', $dados);
+					$this->set('escalas', $escalas);	
+					$this->set('journey', $journey);
+					
+					if($this->request->is('post') || $this->request->is('put'))
+					{
+						$validaEscala = $this->JourneyValid->_validaEscala($this->request->data, $dados);
+						if($validaEscala['resposta'] == true){
+							$data = $this->JourneyValid->_formataData($this->request->data);	
+							if($this->MonthlyJourney->saveMany($data))
+							{
+								$this->Session->setFlash(__($this->Mensagens->sucessoEdit), 'default', array('class' => 'success'));
+								$this->redirect(array('plugin'=>'journey', 'controller'=>'journeys', 'action'=>'editarEscala'.'?colaborador='.$params['employee_id'].'&escala='.$params['journey_id']));
+							}else{
+								$this->Session->setFlash(__($this->Mensagens->falhaEdit), 'default', array());
+							}
+						}else{
+							$this->Session->setFlash(__($validaEscala['msg']), 'default', array());
+						}
+					}
+					}
+			}else{
+				$this->Session->setFlash(__($verificaStatus['msg']), 'default', array());
+				$this->redirect(array('action' => 'index'));	
+			}
+		}
+	
+	
+	
+	public function _retornaParametros($id)
+	{	
+		$parametro = $this->MonthlyJourney->find('first', 
+		array('conditions'=>array('MonthlyJourney.id'=>$id)));
+		$params['colaborador'] = $parametro['MonthlyJourney']['employee_id'];
+		$params['escala'] = $parametro['MonthlyJourney']['journey_id'];
+		return $params;
+	}
+	
+	/**
+	 * Função que gera escala automagicamente
+	 * 
+	 */
+	 public function admin_gerarEscalaAuto()
+	 {
+	 	if($this->request->data)
+	 	{
+	 		$escalaAntiga = $this->MonthlyJourney->findById($this->request->data['MonthlyJourney']['id']);
+			$data = $this->request->data;
+			$this->_resetaEscala($escalaAntiga['MonthlyJourney']['journey_id'], $escalaAntiga['MonthlyJourney']['employee_id']);
+			$listaEscala = $this->MonthlyJourney->find('all', 
+				array('conditions'=>array(	'MonthlyJourney.employee_id'=>$escalaAntiga['MonthlyJourney']['employee_id'],
+											'MonthlyJourney.journey_id'=>$escalaAntiga['MonthlyJourney']['journey_id']
+				),
+				'fields'=>array('MonthlyJourney.id'),
+				'order'=>array('MonthlyJourney.dia'=>'ASC')));
+			
+			if($data['MonthlyJourney']['trabalha'] == 1)
+			{
+				$verificaDiaTrabalha = 'N';	
+			}else{
+				$verificaDiaTrabalha = 'Y';	
+			}
+			
+			$this->JourneyDataProcessing->_gravaDiasTrabalhados($listaEscala, $verificaDiaTrabalha);	
+			$this->Session->setFlash(__('Escala atualizada com sucesso!!'), 'default', array('class'=>'success'));
+			$this->redirect(array('action' => 'editarEscala', '?colaborador='.$escalaAntiga['MonthlyJourney']['employee_id'].'&escala='.$escalaAntiga['MonthlyJourney']['journey_id']));
+	 	}else{
+			$this->Session->setFlash(__('Escala não encontrada'), 'default', array('class' => 'error'));
+			$this->redirect(array('plugin'=>'manager', 'controller'=>'users', 'action' => 'index', 'admin'=>true));	
+	 	}
+	 }
+	
+	
+	public function admin_delete($id = null) 
+	{
+			$verificaStatus = $this->JourneyValid->_verificaStatusEscala($id);
+			if($verificaStatus['resposta'] == true)
+			{ 
+					$this->Journey->id = $id;
+					if (!$this->Journey->exists()) 
+					{
+						throw new NotFoundException(__($this->Mensagens->registroInvalido));
+					}
+							$JourneyParaDeletar = $this->Journey->read(null, $id);
+							$JourneyParaDeletar['Journey']['isdeleted']='Y';
+							if($this->Journey->saveAll($JourneyParaDeletar))
+							{
+								$this->Session->setFlash(__($this->Mensagens->sucessoDelet), 'default', array('class' => 'success'));
+								$this->redirect(array('action' => 'index'));
+							}
+							else
+							{
+								$this->Session->setFlash(__($this->Mensagens->falhaDelet), 'default', array('class' => 'error'));
+								$this->redirect(array('action' => 'index'));
+							}
+			}else{
+				$this->Session->setFlash(__($verificaSituacaoEscala['msg']), 'default', array());
+				$this->redirect(array('action' => 'index'));	
+			}	
+	}
+	
+	
+	/**
+	 * Metodo que reseta toda a escala do mês do trabalhado. Marca todos os dias como "NÃO TRABALHADOS"
+	 */
+	public function _resetaEscala($journey_id, $employee_id)
+	{
+		$this->MonthlyJourney->updateAll(
+	    array('MonthlyJourney.trabalha' => 0),
+	    array(  'MonthlyJourney.employee_id' => $employee_id,
+				'MonthlyJourney.journey_id' => $journey_id
+		));
+		return true;
+	}
+	
+	
+	/**
+	 * Método responsável pela visualização da escala - por tipo de escala
+	 */
+	 
+	 public function admin_visualizaEscala($id = null)
+	 {
+	 	$this->Journey->id = $id;
+		if (!$this->Journey->exists()) 
+		{
+			throw new NotFoundException(__($this->Mensagens->registroInvalido));
+		}
+		$journey = $this->Journey->findById($id);
+		$escalas = $this->JourneyDataProcessing->_retornaTiposEscalas();
+		$this->set('journey', $journey);
+		$this->set('escalas', $escalas);
+	 }
+	
+	
+	/**
+	 * Método responsável por visualização do calendario da escala no mês selecionado
+	 */
+	 public function admin_verEscalaMensal()
+	 {
+		if($this->params['url']['escala'] and $this->params['url']['tipoEscala'])
+		{
+			$params['escala'] = $this->params['url']['escala'];
+			$params['tipo_escala'] = $this->params['url']['tipoEscala'];			
+			$listarColaboradoresEscalas = $this->JourneyDataProcessing->_listarColaboradoresEscalas($params);
+			if($listarColaboradoresEscalas <> false)
+			{
+				$validaEscala = $this->JourneyValid->_verificaIdEscala($this->params['url']['escala']);
+				if($validaEscala['resposta'] == true)
+				{
+					$listarEscalaMensais = $this->JourneyDataProcessing->_listarEscalaMensais($listarColaboradoresEscalas, $params);
+					$dias_mes = $this->JourneyDataProcessing->_retornaMesCompleto($params['escala']);				
+					$this->set('listarEscalaMensais', $listarEscalaMensais);
+					$this->set('dias_mes', $dias_mes);
+				}else{
+					$this->Session->setFlash(__($validaEscala['msg']), 'default', array());
+					$this->redirect(array('plugin'=>'journey', 'controller'=>'journeys', 'action' => 'index'));
+				}
+			
+			}else{
+				$this->Session->setFlash(__('Escala inexistente!!'), 'default', array());
+				$this->redirect(array('plugin'=>'journey', 'controller'=>'journeys', 'action' => 'index'));	
+			}
+		}else{
+			$this->Session->setFlash(__('Você não selecionou uma escala válida'), 'default', array());
+			$this->redirect(array('plugin'=>'journey', 'controller'=>'journeys', 'action' => 'index'));	
+		}		
+	 }
+	
+	
+	/**
+	 * Método responsável por editar o horário de trabalho de um dia de escala
+	 * 
+	 */
+	public function admin_alteraHorario($id = null)
+	{
+		$this->MonthlyJourney->id = $id;
+		if (!$this->MonthlyJourney->exists()) 
+		{
+			throw new NotFoundException(__($this->Mensagens->registroInvalido));
+		}
+		$dadosEscala = $this->MonthlyJourney->findById($id);
+		$dados = $this->EmployeeData-> _employeePersons($this->EmployeeData-> _retornaPersonId($dadosEscala['MonthlyJourney']['employee_id']));	
+	
+		$journey = $this->Journey->findById($dadosEscala['MonthlyJourney']['journey_id']);
+		$verificaStatus = $this->JourneyValid->_verificaStatusEscala($dadosEscala['MonthlyJourney']['journey_id']);
+		if($verificaStatus['resposta'] == true)
+		{
+				if($this->request->is('post') || $this->request->is('put'))
+				{
+					$data = $this->request->data;		
+					$data['MonthlyJourney']['id'] = $id;
+					$save = $this->JourneyValid->_validaDados($data, $dados);		
+					if(!isset($save['resposta']))
+					{
+						if($this->MonthlyJourney->save($save))
+						{
+							$this->Session->setFlash(__($this->Mensagens->sucessoEdit), 'default', array('class' => 'success'));
+							$this->redirect(array('plugin'=>'journey', 'controller'=>'journeys', 'action' => 'editarEscala?colaborador='.$dadosEscala['MonthlyJourney']['employee_id'].'&escala='.$dadosEscala['MonthlyJourney']['journey_id']));
+						}else{
+							$this->Session->setFlash(__($this->Mensagens->falhaEdit), 'default', array());				
+						}	
+					}else{
+						$this->Session->setFlash(__($save['msg']), 'default', array());
+					}
+					
+				}else{	
+					$this->request->data = $dadosEscala;
+				}
+				$this->set('dados', $dados);
+				$this->set('journey', $journey);
+		}else{
+			$this->Session->setFlash(__($verificaStatus['msg']), 'default', array());
+			$this->redirect(array('action' => 'index'));	
+		}		
+	}
+	
+	/**
+	 * Método responsável por retornar o horário de escala do colaborador 
+	 * para seu horário normal diário, definido na função
+	 */
+	public function admin_resetTime($id = null)
+	{
+		$this->MonthlyJourney->id = $id;
+		if (!$this->MonthlyJourney->exists()) 
+		{
+			throw new NotFoundException(__($this->Mensagens->registroInvalido));
+		}	
+		$data = $this->MonthlyJourney->read(null, $id);
+		$data['MonthlyJourney']['horario_default'] = 1;
+		$data['MonthlyJourney']['horario_entrada'] = null;
+		$data['MonthlyJourney']['intervalo_saida'] = null;
+		$data['MonthlyJourney']['intervalo_retorno'] = null;
+		$data['MonthlyJourney']['horario_saida'] = null;
+		
+		if($this->MonthlyJourney->saveAll($data))
+		{
+			$this->Session->setFlash(__($this->Mensagens->sucessoEdit), 'default', array('class' => 'success'));
+			$this->redirect(array('action' => 'alteraHorario', $id));
+		}
+		else
+		{
+			$this->Session->setFlash(__($this->Mensagens->falhaEdit), 'default', array());
+			$this->redirect(array('action' => 'alteraHorario', $id));
+		}
+	}
+	
+	
+	
+	
+}

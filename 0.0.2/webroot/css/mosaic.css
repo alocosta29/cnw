@@ -1,0 +1,288 @@
+/*
+    Mosaic - Sliding Boxes and Captions jQuery Plugin
+    Version 1.0.1
+    www.buildinternet.com/project/mosaic	
+    By Sam Dunn / One Mighty Roar (www.onemightyroar.com)
+    Released under MIT License / GPL License
+*/
+* {
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+ 
+}
+
+
+  
+
+
+
+/*240px*/
+@media (min-width : 15.0em) 
+{
+    .sec-mosaic{
+     visibility: hidden;
+     display: none;
+        
+    }
+}
+
+
+/*640px*/
+  @media  (min-width : 40em) 
+  {
+      
+      
+         .sec-mosaic{
+            width:  39.9em;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            visibility: visible;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            line-height: 110%;
+            font-size: 16px;
+    
+        }
+            /*General Mosaic Styles*/
+       .mosaic-block {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:18.5em;
+               height:14.4em;
+
+               margin-bottom:0.3em;
+               margin-right: 0.3em;
+
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+       }
+       .mosaic-block2 {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:10em;
+               height:7em;
+               margin-bottom:0.3em;
+               margin-right:0.3em;
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+} 
+      
+
+.mosaic-backdrop {
+        display:none;
+        position:absolute;
+        top:0;
+        height:100%;
+        width:100%;
+        background:#111;
+}	
+
+.mosaic-backdrop img{
+    width: 100%;
+}
+.mosaic-overlay {
+        display:none;
+        z-index:5;
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:#111;
+}
+/*** Custom Animation Styles (You can remove/add any styles below) ***/
+.bar2 .mosaic-overlay {
+        bottom:-0px;
+        height:105px;
+        opacity:0.8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        filter:alpha(opacity=80);
+}
+
+.bar2 .mosaic-overlay:hover {
+        opacity:1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter:alpha(opacity=100);
+}   
+  }    
+
+/*992px*/
+  @media (min-width : 62em) {
+   .sec-mosaic{
+            width:  61.9em;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            margin-bottom: 1em;
+            margin-top: 1em;
+             line-height: 130%;
+            font-size: 16px;
+    
+        }
+            /*General Mosaic Styles*/
+       .mosaic-block {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:29em;
+               height:18em;
+
+               margin-bottom:0.3em;
+               margin-right: 0.3em;
+
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+       }
+       .mosaic-block2 {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:15.4em;
+               height:8.8em;
+               margin-bottom:0.3em;
+               margin-right:0.3em;
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+} 
+      
+      
+
+.mosaic-backdrop {
+        display:none;
+        position:absolute;
+        top:0;
+        height:100%;
+        width:100%;
+        background:#111;
+}	
+.mosaic-backdrop img{
+    width: 100%;
+}
+.mosaic-overlay {
+        display:none;
+        z-index:5;
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:#111;
+}
+/*** Custom Animation Styles (You can remove/add any styles below) ***/
+.bar2 .mosaic-overlay {
+        bottom:-15px;
+        height:100px;
+        opacity:0.8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        filter:alpha(opacity=80);
+}
+
+.bar2 .mosaic-overlay:hover {
+        opacity:1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter:alpha(opacity=100);
+}
+  
+  
+  
+  }
+      
+      
+/*1100px*/
+  @media  (min-width: 68.75em){
+   
+    .sec-mosaic{
+            width:  68.74em;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            line-height: 140%;
+            font-size: 16px;
+    
+        }
+            /*General Mosaic Styles*/
+       .mosaic-block {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:30.8em;
+               height:19.5em;
+
+               margin-bottom:0.3em;
+               margin-right: 0.3em;
+
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+       }
+       .mosaic-block2 {
+               float:left;
+               position:relative;
+               overflow:hidden;
+               width:18.3em;
+               height:9.55em;
+               margin-bottom:0.3em;
+               margin-right:0.3em;
+               border:1px solid #fff;
+               -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
+            }
+            
+            
+
+
+
+
+
+
+
+
+.mosaic-backdrop {
+        display:none;
+        position:absolute;
+        top:0;
+        height:100%;
+        width:100%;
+        background:#111;
+}
+.mosaic-backdrop img{
+    width: 100%;
+}
+
+.mosaic-overlay {
+        display:none;
+        z-index:5;
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:#111;
+}
+/*** Custom Animation Styles (You can remove/add any styles below) ***/
+.bar2 .mosaic-overlay {
+        bottom:-20px;
+        height:100px;
+        opacity:0.8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        filter:alpha(opacity=80);
+}
+
+.bar2 .mosaic-overlay:hover {
+        opacity:1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter:alpha(opacity=100);
+}
+            
+}
+
+
+
+
+
+
+
+
+/*** End Animation Styles ***/

@@ -1,0 +1,15 @@
+PAPÉIS:
+
+1. Superuser/Programador
+ - Cria e edita grupos de acesso
+ - Cria e edita módulos que terão controle por usuário
+ - Criam/editam cadernos
+  
+2. Administradores
+ - Atribuem permissões especiais(administrador de caderno, etc..)
+ - Podem ativar e desativar usuários
+ 
+ 
+PERMISSÕES ESPECIAIS:
+ - Administrador de cadernos
+ - Colunista

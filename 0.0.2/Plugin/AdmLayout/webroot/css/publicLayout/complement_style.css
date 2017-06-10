@@ -1,0 +1,670 @@
+@charset 'utf-8';
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+/* CSS Document */
+html, body {height:100%;} 
+body {
+	font: normal 100% "Open Sans", verdana, tahoma, sans-serif;
+	margin:0;
+	padding:0;
+	}
+	
+#main { 
+position: relative;
+width: 100%;
+min-height: 100%;
+margin: 0 auto;
+padding-bottom: 250px;
+min-height:100%;
+}
+#footer {
+clear: both;
+width:100%;
+height:auto;
+position: absolute;
+bottom: 0; 
+}
+#footer_company{
+width:100%;
+padding-top: 10px;
+padding-bottom: 10px;
+height:auto;
+background-color: #f0efef;
+}
+#client-title{
+	width: 900px;
+	height:  auto !important;
+	color:#fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;	
+	font-size: 1.5em;	
+	font-weight: bold;
+}
+.feed{
+width:100%;
+height:auto !important;
+background-color:#efeeee;	
+padding-top: 10px;
+padding-bottom: 10px;
+
+	
+}
+
+#feedContent{
+	width: 900px;
+		
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;	
+	font-size: 1.5em;	
+	font-weight: bold;
+}
+
+#client-itens{
+	width: 900px;
+	height:  auto !important;
+	color:#fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;	
+
+}
+#footer_company_recipient{
+width:900px;
+margin-left: auto;
+margin-right: auto;
+height:auto;
+background-color: #f0efef;
+text-align: right;
+font-size: 1.1em;
+}
+
+
+
+
+#footer_copy{
+	width: 100%;
+	background-color: #656161;
+	text-align: center;
+	height: auto;
+	color: #fff;
+	font-size: 1.2em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+.clear {clear:both;}
+	
+.clients li {
+	float: left; list-style: none; position: relative; width: 170px;
+	display: list-item;
+text-align: center;
+	
+	
+}	
+ul .clients{
+	position: relative;
+left: 0;
+display: block;
+float: left;
+margin: 0 10px 0 0;
+	
+
+}
+
+	
+	
+#listItem{
+	
+	margin-bottom: 20px;
+	width: 900px;
+	height: auto;
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}	
+	
+.saiba-mais{
+	width: 12.2em;
+}	
+p{
+font-size: 1.3em;	
+	
+	
+}
+	
+.marginTop{
+	height:10px;
+	width:100%;
+	background-color:#d0020c;
+		
+}
+.articleTitleHome{
+	font-size: 0.8em;
+	text-transform: uppercase;
+	color: #d0020c;	
+}
+
+
+.articleDateHome{
+	font-size: 0.8em;
+	color: #8d8b8b;	
+}
+
+
+.header{
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;	
+}
+#logo{
+	float:left;
+	width: 287px;
+	height:110px;
+	
+	
+}
+.logoImg{
+	
+	width: 287px;
+	height:73px;
+	
+	margin-top: 15px;
+	margin-bottom: auto;
+	
+}
+.barraService{
+	width: 40.5 em;
+	
+}
+#menu{
+	width:613px;
+	height:110px;
+	float:left;
+	/*background-color:#CCC;*/
+	
+}
+.centerDivServices{
+	width: 900px;
+   /* margin-left: auto;
+    margin-right: auto;*/
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    font-size: 2em; 
+	font-weight: bold;
+	height: auto;
+}
+.serviceItemImg{
+	width: 180px;
+	height: 180px;
+	display: inline-block;
+	background-image: url("../../img/publicLayout/backPoligService.png");
+	background-repeat: no-repeat;
+}
+.serviceItem{
+	width: 180px;
+	height: auto;
+	float: left;
+	display: block;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.serviceItemText{
+	width: 180px;
+	min-height: 175px;
+	height: auto;
+	float: left;
+	font-size: 1.2em;
+}
+.link-saiba-mais{
+	float: left;
+	width: 180px;
+	height: auto;
+	
+}
+.centerDivSub{
+	width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center; 
+    height: auto;
+  
+}
+
+.content_geral{
+	padding-top: 140px;
+	width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+h5{
+	text-align: left;
+	font-size: 1.70em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 20px;
+	color:#d0020c;
+}
+.text-content{
+	line-height: 2.0em;
+	text-align: justify;
+	font-size: 1.5em;
+}
+
+
+.article-colum{
+	margin-top: 20px;
+	float: left;
+	width: 130px;
+	padding-left: 20px;
+	
+	
+}
+.article-colum-title{
+	
+	font-size: 1.7em;
+	font-weight: bold;
+	
+}
+
+
+
+.article-content .dateArticle{
+	font-size: 0.9em;
+	
+	
+}
+
+
+.article-content{
+	margin-top: 20px;
+	width: 750px;
+	float: left;
+	line-height: 2.0em;
+	text-align: justify;
+	font-size: 1.5em;
+}
+
+.article-content h1{
+  color: #d0020c;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 0 !important;
+ text-transform: uppercase;
+ padding-bottom: 5px;
+ margin-bottom: 2px;
+ border-bottom: #D6D6D6 solid 1px;
+}
+
+
+.text-content p{
+	line-height: 2.0em;
+	font-size: 1.0em;
+}
+
+.itemService{
+	width: 180px;
+}
+
+h4{
+	font-size: 1.40em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+.title-client{
+	font-size: 1.4em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+	margin-top: 10px;
+}
+.client-list{
+width:100%;
+height: auto !important;;
+background-color:#b8b8b8;
+min-height: 120px;
+}
+.saiba-mais-service{
+	width: 10.0em;
+}
+
+
+.slide{
+width:100%;
+height:470px;	
+background-color:#8b8a8a;	
+	
+}
+
+.content_home{
+	width:100%;
+	height:auto;
+margin-bottom: 20px;	
+
+
+	}
+
+.client_home{
+	width:100%;
+	height:150px;
+	float:left;
+	background-color:#8b8a8a;	
+	margin-bottom: 20px;
+	}
+	
+.data_company{
+	width:100%;
+	height:150px;
+	float:left;
+	background-color:f0efef;	
+	margin-bottom: 20px;
+	}	
+	
+	
+	.footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+	
+	
+#menu ul .menuHome {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+	
+.menu_80{
+width:80px;	
+height:110px;
+float: left;
+}
+.menu_90{
+width:90px;	
+height:110px;
+float: left;
+}	
+.menu_183{
+width:183px;	
+height:110px;
+float: left;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/* -------------------------------------------------------------
+ * para monitores com no máximo 1440px (19" W) de largura 
+-------------------------------------------------------------*/
+@media screen and (min-width: 950px) {
+	
+
+	
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 800px (14") de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 949px) {
+
+
+
+}
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 640px (iPhone 4) de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 640px) {
+
+}
+
+
+/* ------------------------------------------------------------
+ * para monitores com no máximo 360px (Sony xperia) de largura 
+-------------------------------------------------------------*/
+@media screen and (max-width: 360px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
+			#efeito_home {
+			width: 80px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/home.png) top left no-repeat;
+			display: block;
+			}
+			
+			#efeito_empresa {
+			width: 90px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/empresa.png) top left no-repeat;
+			display: block;
+			}	
+			
+			#efeito_servicos {
+			width: 90px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/servicos.png) top left no-repeat;
+			display: block;
+			}	
+			
+			#efeito_palestras {
+			width: 183px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/palestras.png) top left no-repeat;
+			display: block;
+			}
+						
+			#efeito_download {
+			width: 90px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/download.png) top left no-repeat;
+			display: block;
+			}		
+		
+			#efeito_contato {
+			width: 80px; height: 110px;
+			overflow: hidden;
+			background: url(../../img/publicLayout/menu/contato.png) top left no-repeat;
+			display: block;
+			}		
+			
+			
+	 
+			#efeito_home:hover	{
+			background-position: bottom left;
+			}
+			#efeito_empresa:hover	{
+			background-position: bottom left;
+			}
+			#efeito_servicos:hover	{
+			background-position: bottom left;
+			}
+			#efeito_palestras:hover	{
+			background-position: bottom left;
+			}
+			#efeito_download:hover	{
+			background-position: bottom left;
+			}
+		#efeito_contato:hover	{
+			background-position: bottom left;
+			}
+
+.news-home { height:60px; overflow:hidden; width: 900px; margin-left: auto; margin-right: auto;
+background:url('../../img/publicLayout/feedImg.png') no-repeat left center; 
+}
+.feed .news-home h2 { padding:0 114px 0 66px;
+background-color: #000000;
+z-index: 100000;
+/* background:url('../../img/publicLayout/feedImg.png') no-repeat left center; */
+ 
+ 
+ float:left; border-right:1px solid #e1dfdf; overflow:hidden }
+.news-home ul { list-style:none; float:right; margin: 20px 0 0 0; }
+.news-home li { width:600px; padding:0px 30px 20px 0; font-size:1.2em } 
+
+
+
+.inner a:link {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.inner a:visited {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.inner a:hover {
+	color: #d0020c;
+	text-decoration:underline;
+	font-weight: bold;
+}
+.inner a:active {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+
+.article-colum a:link {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.article-colum a:visited {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.article-colum a:hover {
+	color: #d0020c;
+	text-decoration:underline;
+	font-weight: bold;
+}
+.article-colum a:active {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+.list-article a:link {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.list-article a:visited {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+.list-article a:hover {
+	color: #d0020c;
+	text-decoration:underline;
+	font-weight: bold;
+}
+.list-article a:active {
+	color: #d0020c;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#thumb {
+  float: left;
+  min-height: 100px !important;
+  height: auto;
+  width: 180px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+.categorie_download{
+	width: 180px;
+	height: auto;
+	float: left;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+	
+}
+.pagination{
+	width: 900px;
+	float: left;
+	
+	
+}
+
